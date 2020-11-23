@@ -36,7 +36,7 @@
                 <a href="#caesars-cipher" id="caesars-cipher-btn">
                     Caesars Cipher
                 </a>
-                <a href="#">
+                <a href="#telephone-number-validator" id="telephone-number-validator-btn">
                     Telephone Number Validator
                 </a>
                 <a href="#">
@@ -602,6 +602,175 @@
                 </a>
             </p>
         </div>
+        <div id="telephone-number-validator">
+            <p>
+                <a href="#home" class="back-btn">
+                    <- BACK
+                </a>
+            </p>
+            <h1>
+                Telephone Number Validator
+            </h1>
+            <p>
+                Return true if the passed string looks like a valid US phone number.
+            </p>
+            <p>
+                The user may fill out the form field any way they choose as long as it has the format of a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):
+            </p>
+            <div class="div-code">
+                <code>
+                    <p>
+                        555-555-5555
+                    </p>
+                    <p>
+                        (555)555-5555
+                    </p>
+                    <p>
+                        (555) 555-5555
+                    </p>
+                    <p>
+                        555 555 5555
+                    </p>
+                    <p>
+                        5555555555
+                    </p>
+                    <p>
+                        1 555 555 5555
+                    </p>
+                </code>
+            </div>
+            <p>
+                For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return <code>true</code> if the string is a valid US phone number; otherwise return <code>false</code>.
+            </p>
+            <div>
+                <input value="Type a phone number here." id="telephone-input">        
+                </input>
+                <button id="telephone-button">
+                    TEST
+                </button>
+            </div>
+            <p id="telephone-result">
+                ⚫
+            </p>
+            <div>
+                <p>
+                    <a href="#show-telephone-tests" id="show-telephone-tests">
+                        ▾ View provided test cases
+                    </a>
+                </p>
+                <div id="telephone-tests">
+                    <p>
+                        <code>555-555-5555</code> should return a boolean.
+                    </p>
+                    <p>
+                        <code>1 555-555-5555</code> should return true.
+                    </p>
+                    <p>
+                        <code>1 (555) 555-5555</code> should return true.
+                    </p>
+                    <p>
+                        <code>5555555555</code> should return true.
+                    </p>
+                    <p>
+                        <code>555-555-5555</code> should return true.
+                    </p>
+                    <p>
+                        <code>(555)555-5555</code> should return true.
+                    </p>
+                    <p>
+                        <code>1(555)555-5555</code> should return true.
+                    </p>
+                    <p>
+                        <code>555-5555</code> should return false.
+                    </p>
+                    <p>
+                        <code>5555555</code> should return false.
+                    </p>
+                    <p>
+                        <code>1 555)555-5555</code> should return false.
+                    </p>
+                    <p>
+                        <code>1 555 555 5555</code> should return true.
+                    </p>
+                    <p>
+                        <code>1 456 789 4444</code> should return true.
+                    </p>
+                    <p>
+                        <code>123**&!!asdf#</code> should return false.
+                    </p>
+                    <p>
+                        <code>55555555</code> should return false.
+                    </p>
+                    <p>
+                        <code>(6054756961)</code> should return false.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <p>
+                    <a href="#show-telephone-code" id="show-telephone-code">
+                        ▾ View code solution
+                    </a>
+                </p>
+                <div id="telephone-code" class="div-code">
+                    <code>
+                        <p>
+                            let cipher = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+                        </p>
+                        <p>
+                            let abc = ["N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
+                        </p>
+                        <p>
+                            function rot13(str) {
+                        </p>
+                        <p>
+                            let strArray = str.split('');
+                        </p>
+                        <p>
+                            let resultArray = [];
+                        </p>
+                        <p>
+                            console.log(strArray);
+                        </p>
+                        <p>
+                            for (let i = 0; i < strArray.length; i++) {
+                        </p>
+                        <p>
+                            if (cipher.indexOf(strArray[i]) >= 0) {
+                        </p>
+                        <p>
+                            resultArray.push(abc[cipher.indexOf(strArray[i])]);
+                        </p>
+                        <p>
+                            } else {
+                        </p>
+                        <p>
+                            resultArray.push(strArray[i]);
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            let result = resultArray.join('');
+                        </p>
+                        <p>
+                            return result;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                    </code>
+                </div>
+            </div>
+            <p>
+                <a href="#home" class="back-btn">
+                    <- BACK
+                </a>
+            </p>
+        </div>
     </main>
     <footer>
         <div id="desktop-footer">
@@ -636,5 +805,6 @@
     <script src="scripts/palindrome-checker.js"></script>
     <script src="scripts/roman-numeral-converter.js"></script>
     <script src="scripts/caesars-cipher.js"></script>
+    <script src="scripts/telephone-number-validator.js"></script>
 </body>
 </html>

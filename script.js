@@ -15,11 +15,17 @@ document.getElementById('caesars-cipher-btn').addEventListener('click', function
     document.getElementById('caesars-cipher').style.display = 'flex';
 });
 
+document.getElementById('telephone-number-validator-btn').addEventListener('click', function() {
+    document.getElementById('home').style.display = 'none';
+    document.getElementById('telephone-number-validator').style.display = 'flex';
+});
+
 for (let i = 0; i < document.getElementsByClassName('back-btn').length; i++) {
     document.getElementsByClassName('back-btn')[i].addEventListener('click', function() {
         document.getElementById('palindrome-checker').style.display = 'none';
         document.getElementById('roman-numeral-converter').style.display = 'none';
         document.getElementById('caesars-cipher').style.display = 'none';
+        document.getElementById('telephone-number-validator').style.display = 'none';
         document.getElementById('home').style.display = 'block';
     });
 }
@@ -108,5 +114,34 @@ document.getElementById('show-caesars-tests').addEventListener('click', function
         document.getElementById('caesars-tests').style.display = 'none';
         document.getElementById('show-caesars-tests').innerText = '▾ View provided test cases';
         caesarsTests = false;
+    }
+});
+
+// TELEPHONE NUMBER VALIDATOR
+
+let telephoneCode = false;
+let telephoneTests = false;
+
+document.getElementById('show-telephone-code').addEventListener('click', function() {
+    if (telephoneCode == false) {
+        document.getElementById('telephone-code').style.display = 'block';
+        document.getElementById('show-telephone-code').innerText = '▴ Close code solution';
+        telephoneCode = true;
+    } else if (telephoneCode == true) {
+        document.getElementById('telephone-code').style.display = 'none';
+        document.getElementById('show-telephone-code').innerText = '▾ View code solution';
+        telephoneCode = false;
+    }
+});
+
+document.getElementById('show-telephone-tests').addEventListener('click', function() {
+    if (telephoneTests == false) {
+        document.getElementById('telephone-tests').style.display = 'block';
+        document.getElementById('show-telephone-tests').innerText = '▴ Close provided test cases';
+        telephoneTests = true;
+    } else if (telephoneTests == true) {
+        document.getElementById('telephone-tests').style.display = 'none';
+        document.getElementById('show-telephone-tests').innerText = '▾ View provided test cases';
+        telephoneTests = false;
     }
 });

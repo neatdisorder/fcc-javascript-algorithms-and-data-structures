@@ -210,6 +210,25 @@ footer a:hover {
     visibility: hidden;
 }
 
+/* -- TELEPHONE CSS -- */
+
+#telephone-number-validator {
+    display: none;
+    flex-direction: column;
+}
+
+#telephone-code {
+    display: none;
+}
+
+#telephone-tests {
+    display: none;
+}
+
+#telephone-result {
+    visibility: hidden;
+}
+
 /* -- DESKTOP STYLE -- */
 
 @media only screen and (min-width: 992px) {
