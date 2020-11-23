@@ -137,6 +137,10 @@ footer a {
     text-decoration: none;
 }
 
+footer a:hover {
+    text-decoration: underline;
+}
+
 #mobile-footer {
     display: flex;
     flex-direction: column;
@@ -184,6 +188,25 @@ footer a {
 }
 
 #roman-result {
+    visibility: hidden;
+}
+
+/* -- CAESARS CSS -- */
+
+#caesars-cipher {
+    display: none;
+    flex-direction: column;
+}
+
+#caesars-code {
+    display: none;
+}
+
+#caesars-tests {
+    display: none;
+}
+
+#caesars-result {
     visibility: hidden;
 }
 

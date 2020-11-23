@@ -10,10 +10,16 @@ document.getElementById('roman-numeral-converter-btn').addEventListener('click',
     document.getElementById('roman-numeral-converter').style.display = 'flex';
 });
 
+document.getElementById('caesars-cipher-btn').addEventListener('click', function() {
+    document.getElementById('home').style.display = 'none';
+    document.getElementById('caesars-cipher').style.display = 'flex';
+});
+
 for (let i = 0; i < document.getElementsByClassName('back-btn').length; i++) {
     document.getElementsByClassName('back-btn')[i].addEventListener('click', function() {
         document.getElementById('palindrome-checker').style.display = 'none';
         document.getElementById('roman-numeral-converter').style.display = 'none';
+        document.getElementById('caesars-cipher').style.display = 'none';
         document.getElementById('home').style.display = 'block';
     });
 }
@@ -73,5 +79,34 @@ document.getElementById('show-roman-tests').addEventListener('click', function()
         document.getElementById('roman-tests').style.display = 'none';
         document.getElementById('show-roman-tests').innerText = '▾ View provided test cases';
         romanTests = false;
+    }
+});
+
+// CAESARS CIPHER DROPDOWNS
+
+let caesarsCode = false;
+let caesarsTests = false;
+
+document.getElementById('show-caesars-code').addEventListener('click', function() {
+    if (caesarsCode == false) {
+        document.getElementById('caesars-code').style.display = 'block';
+        document.getElementById('show-caesars-code').innerText = '▴ Close code solution';
+        caesarsCode = true;
+    } else if (caesarsCode == true) {
+        document.getElementById('caesars-code').style.display = 'none';
+        document.getElementById('show-caesars-code').innerText = '▾ View code solution';
+        caesarsCode = false;
+    }
+});
+
+document.getElementById('show-caesars-tests').addEventListener('click', function() {
+    if (caesarsTests == false) {
+        document.getElementById('caesars-tests').style.display = 'block';
+        document.getElementById('show-caesars-tests').innerText = '▴ Close provided test cases';
+        caesarsTests = true;
+    } else if (caesarsTests == true) {
+        document.getElementById('caesars-tests').style.display = 'none';
+        document.getElementById('show-caesars-tests').innerText = '▾ View provided test cases';
+        caesarsTests = false;
     }
 });

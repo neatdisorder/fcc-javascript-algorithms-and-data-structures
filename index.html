@@ -23,6 +23,9 @@
             <p>
                 These are my solutions for the final projects of the <span class="text-bold">Javascript Algorithms and Data Structures Certification</span> of the <a href="https://www.freecodecamp.org/learn" target="_blank">freeCodeCamp curriculum</a>, which I completed on November 2020. Clicking the buttons below you will find a description of the program, a working version, a detail of the test cases used and the embedded code with the solution.
             </p>
+            <p>
+                <span class="text-bold">Please note:</span> At the moment, the code for these projects has been optimized for complying with fCC's provided tests cases. I'm working on improving them to function correctly on this external environment.
+            </p>
             <div id="botones">
                 <a href="#palindrome-checker" id="palindrome-checker-btn">
                     Palindrome Checker
@@ -30,7 +33,7 @@
                 <a href="#roman-numeral-converter" id="roman-numeral-converter-btn">
                     Roman Numeral Converter
                 </a>
-                <a href="#">
+                <a href="#caesars-cipher" id="caesars-cipher-btn">
                     Caesars Cipher
                 </a>
                 <a href="#">
@@ -482,6 +485,123 @@
                 </a>
             </p>
         </div>
+        <div id="caesars-cipher">
+            <p>
+                <a href="#home" class="back-btn">
+                    <- BACK
+                </a>
+            </p>
+            <h1>
+                Caesars Cipher
+            </h1>
+            <p>
+                One of the simplest and most widely known ciphers is a Caesar cipher, also known as a shift cipher. In a shift cipher the meanings of the letters are shifted by some set amount.
+            </p>
+            <p>
+                A common modern use is the ROT13 cipher, where the values of the letters are shifted by 13 places. Thus 'A' ↔ 'N', 'B' ↔ 'O' and so on.
+            </p>
+            <p>
+                Write a function which takes a ROT13 encoded string as input and returns a decoded string.
+            </p>
+            <p>
+                All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
+            </p>
+            <div>
+                <input value="Type an UPPERCASE text here." id="caesars-input">        
+                </input>
+                <button id="caesars-button">
+                    TEST
+                </button>
+            </div>
+            <p id="caesars-result">
+                ⚫
+            </p>
+            <div>
+                <p>
+                    <a href="#show-caesars-tests" id="show-caesars-tests">
+                        ▾ View provided test cases
+                    </a>
+                </p>
+                <div id="caesars-tests">
+                    <p>
+                        <code>"SERR PBQR PNZC"</code> should decode to <code>FREE CODE CAMP</code>.
+                    </p>
+                    <p>
+                        <code>"SERR CVMMN!"</code> should decode to <code>FREE PIZZA!</code>.
+                    </p>
+                    <p>
+                        <code>"SERR YBIR?"</code> should decode to <code>FREE LOVE?</code>.
+                    </p>
+                    <p>
+                        <code>"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."</code> should decode to <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <p>
+                    <a href="#show-caesars-code" id="show-caesars-code">
+                        ▾ View code solution
+                    </a>
+                </p>
+                <div id="caesars-code" class="div-code">
+                    <code>
+                        <p>
+                            let cipher = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+                        </p>
+                        <p>
+                            let abc = ["N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
+                        </p>
+                        <p>
+                            function rot13(str) {
+                        </p>
+                        <p>
+                            let strArray = str.split('');
+                        </p>
+                        <p>
+                            let resultArray = [];
+                        </p>
+                        <p>
+                            console.log(strArray);
+                        </p>
+                        <p>
+                            for (let i = 0; i < strArray.length; i++) {
+                        </p>
+                        <p>
+                            if (cipher.indexOf(strArray[i]) >= 0) {
+                        </p>
+                        <p>
+                            resultArray.push(abc[cipher.indexOf(strArray[i])]);
+                        </p>
+                        <p>
+                            } else {
+                        </p>
+                        <p>
+                            resultArray.push(strArray[i]);
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            let result = resultArray.join('');
+                        </p>
+                        <p>
+                            return result;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                    </code>
+                </div>
+            </div>
+            <p>
+                <a href="#home" class="back-btn">
+                    <- BACK
+                </a>
+            </p>
+        </div>
     </main>
     <footer>
         <div id="desktop-footer">
@@ -515,5 +635,6 @@
     <script src="script.js"></script>
     <script src="scripts/palindrome-checker.js"></script>
     <script src="scripts/roman-numeral-converter.js"></script>
+    <script src="scripts/caesars-cipher.js"></script>
 </body>
 </html>
