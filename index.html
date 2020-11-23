@@ -16,50 +16,504 @@
         </div>
     </header>
     <main>
-        <h1>
-            freeCodeCamp JavaScript Algorithms and Data Structures Projects
-        </h1>
-        <p>
-            These are my solutions for the final projects of the <span class="text-bold">Javascript Algorithms and Data Structures Certification</span> of the <a href="https://www.freecodecamp.org/learn" target="_blank">freeCodeCamp curriculum</a>, which I completed on November 2020. Clicking the buttons below you will find a description of the program, a working version, a detail of the test cases used and the embedded code with the solution.
-        </p>
-        <div id="botones">
-            <a href="#">
+        <div id="home">
+            <h1>
+                freeCodeCamp JavaScript Algorithms and Data Structures Projects
+            </h1>
+            <p>
+                These are my solutions for the final projects of the <span class="text-bold">Javascript Algorithms and Data Structures Certification</span> of the <a href="https://www.freecodecamp.org/learn" target="_blank">freeCodeCamp curriculum</a>, which I completed on November 2020. Clicking the buttons below you will find a description of the program, a working version, a detail of the test cases used and the embedded code with the solution.
+            </p>
+            <div id="botones">
+                <a href="#palindrome-checker" id="palindrome-checker-btn">
+                    Palindrome Checker
+                </a>
+                <a href="#roman-numeral-converter" id="roman-numeral-converter-btn">
+                    Roman Numeral Converter
+                </a>
+                <a href="#">
+                    Caesars Cipher
+                </a>
+                <a href="#">
+                    Telephone Number Validator
+                </a>
+                <a href="#">
+                    Cash Register
+                </a>
+            </div>
+        </div>
+        <div id="palindrome-checker">
+            <p>
+                <a href="#home" class="back-btn">
+                    <- BACK
+                </a>
+            </p>
+            <h1>
                 Palindrome Checker
-            </a>
-            <a href="#">
+            </h1>
+            <p>
+                Return <code>true</code> if the given string is a palindrome. Otherwise, return <code>false</code>.
+            </p>
+            <p>
+                A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
+            </p>
+            <div>
+                <input value="Type your palindrome here." id="palindrome-input">        
+                </input>
+                <button id="palindrome-button">
+                    TEST
+                </button>
+            </div>
+            <p id="palindrome-result">
+                ⚫
+            </p>
+            <div>
+                <p>
+                    <a href="#show-palindrome-tests" id="show-palindrome-tests">
+                        ▾ View provided test cases
+                    </a>
+                </p>
+                <div id="palindrome-tests">
+                    <p>
+                        <code>"eye"</code> should return a boolean.
+                    </p>
+                    <p>
+                        <code>"eye"</code> should return true.
+                    </p>
+                    <p>
+                        <code>"_eye"</code> should return true.
+                    </p>
+                    <p>
+                        <code>"race car"</code> should return true.
+                    </p>
+                    <p>
+                        <code>"not a palindrome"</code> should return false.
+                    </p>
+                    <p>
+                        <code>"A man, a plan, a canal. Panama"</code> should return true.
+                    </p>
+                    <p>
+                        <code>"never odd or even"</code> should return true.
+                    </p>
+                    <p>
+                        <code>"nope"</code> should return false.
+                    </p>
+                    <p>
+                        <code>"almostomla"</code> should return false.
+                    </p>
+                    <p>
+                        <code>"My age is 0, 0 si ega ym."</code> should return true.
+                    </p>
+                    <p>
+                        <code>"1 eye for of 1 eye."</code> should return false.
+                    </p>
+                    <p>
+                        <code>"0_0 (: /-\ :) 0-0"</code> should return true.
+                    </p>
+                    <p>
+                        <code>"five|_/|four"</code> should return false.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <p>
+                    <a href="#show-palindrome-code" id="show-palindrome-code">
+                        ▾ View code solution
+                    </a>
+                </p>
+                <div id="palindrome-code" class="div-code">
+                    <code>
+                        <p>
+                            function palindrome(str) {
+                        </p>
+                        <p>
+                            let originalArrayClean = str.split('');
+                        </p>
+                        <p>
+                            let originalArrayFiltered = originalArrayClean.filter(value => value.match(/[a-z0-9]/ig));
+                        </p>
+                        <p> 
+                            let originalArrayFilteredString = originalArrayFiltered.join('');
+                        </p>
+                        <p>
+                            let originalArrayFilteredStringLower = originalArrayFilteredString.toLowerCase();
+                        </p>
+                        <p>
+                            let reversedArrayFiltered = [];
+                        </p>
+                        <p>
+                            for (let i = (originalArrayFiltered.length - 1); i >= 0; i--) {
+                        </p>
+                        <p>
+                            reversedArrayFiltered.push(originalArrayFiltered[i]);
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            let reversedArrayFilteredString = reversedArrayFiltered.join('');
+                        </p>
+                        <p>
+                            let reversedArrayFilteredStringLower = reversedArrayFilteredString.toLowerCase();
+                        </p>
+                        <p>
+                            if (originalArrayFilteredStringLower == reversedArrayFilteredStringLower) {
+                        </p>
+                        <p>
+                                return true;
+                        </p>
+                        <p>
+                            } else if (originalArrayFilteredStringLower !== reversedArrayFilteredStringLower) {
+                        </p>
+                        <p>
+                                return false;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                          }
+                        </p>
+                    </code>
+                </div>
+            </div>
+            <p>
+                <a href="#home" class="back-btn">
+                    <- BACK
+                </a>
+            </p>
+        </div>
+        <div id="roman-numeral-converter">
+            <p>
+                <a href="#home" class="back-btn">
+                    <- BACK
+                </a>
+            </p>
+            <h1>
                 Roman Numeral Converter
-            </a>
-            <a href="#">
-                Caesars Cipher
-            </a>
-            <a href="#">
-                Telephone Number Validator
-            </a>
-            <a href="#">
-                Cash Register
-            </a>
+            </h1>
+            <p>
+                Convert the given number into a roman numeral.
+            </p>
+            <p>
+                All roman numerals answers should be provided in upper-case.
+            </p>
+            <div>
+                <input value="Type a 4-digit number here." id="roman-input">        
+                </input>
+                <button id="roman-button">
+                    TEST
+                </button>
+            </div>
+            <p id="roman-result">
+                ⚫
+            </p>
+            <div>
+                <p>
+                    <a href="#show-roman-tests" id="show-roman-tests">
+                        ▾ View provided test cases
+                    </a>
+                </p>
+                <div id="roman-tests">
+                    <p>
+                        <code>2</code> should return "II".
+                    </p>
+                    <p>
+                        <code>3</code> should return "III".
+                    </p>
+                    <p>
+                        <code>4</code> should return "IV".
+                    </p>
+                    <p>
+                        <code>5</code> should return "V".
+                    </p>
+                    <p>
+                        <code>9</code> should return "IX".
+                    </p>
+                    <p>
+                        <code>12</code> should return "XII".
+                    </p>
+                    <p>
+                        <code>16</code> should return "XVI".
+                    </p>
+                    <p>
+                        <code>29</code> should return "XXIX".
+                    </p>
+                    <p>
+                        <code>44</code> should return "XLIV".
+                    </p>
+                    <p>
+                        <code>45</code> should return "XLV".
+                    </p>
+                    <p>
+                        <code>68</code> should return "LXVIII".
+                    </p>
+                    <p>
+                        <code>83</code> should return "LXXXIII".
+                    </p>
+                    <p>
+                        <code>97</code> should return "XCVII".
+                    </p>
+                    <p>
+                        <code>99</code> should return "XCIX".
+                    </p>
+                    <p>
+                        <code>400</code> should return "CD".
+                    </p>
+                    <p>
+                        <code>500</code> should return "D".
+                    </p>
+                    <p>
+                        <code>501</code> should return "DI".
+                    </p>
+                    <p>
+                        <code>649</code> should return "DCXLIX".
+                    </p>
+                    <p>
+                        <code>798</code> should return "DCCXCVIII".
+                    </p>
+                    <p>
+                        <code>891</code> should return "DCCCXCI".
+                    </p>
+                    <p>
+                        <code>1000</code> should return "M".
+                    </p>
+                    <p>
+                        <code>1004</code> should return "MIV".
+                    </p>
+                    <p>
+                        <code>1006</code> should return "MVI".
+                    </p>
+                    <p>
+                        <code>1023</code> should return "MXXIII".
+                    </p>
+                    <p>
+                        <code>2014</code> should return "MMXIV".
+                    </p>
+                    <p>
+                        <code>3999</code> should return "MMMCMXCIX".
+                    </p>
+                </div>
+            </div>
+            <div>
+                <p>
+                    <a href="#show-roman-code" id="show-roman-code">
+                        ▾ View code solution
+                    </a>
+                </p>
+                <div id="roman-code" class="div-code">
+                    <code>
+                        <p>
+                            function convertToRoman(num) {
+                        </p>
+                        <p>
+                            let toConvert = num;
+                        </p>
+                        <p>
+                            let romanResult = "";
+                        </p>
+                        <p>
+                            while (toConvert >= 1000) {
+                        </p>
+                        <p>
+                            romanResult += "M";
+                        </p>
+                        <p>
+                            toConvert -= 1000;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            while (toConvert >= 900 && toConvert <= 999) {
+                        </p>
+                        <p>
+                                romanResult += "CM";
+                        </p>
+                        <p>
+                                toConvert -= 900;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            while (toConvert < 900 && toConvert >= 500) {
+                        </p>
+                        <p>
+                            romanResult += "D";
+                        </p>
+                        <p>
+                            toConvert -= 500;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            while (toConvert >= 400 && toConvert <= 499) {
+                        </p>
+                        <p>
+                                romanResult += "CD";
+                        </p>
+                        <p>
+                                toConvert -= 400;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            while (toConvert < 400 && toConvert >= 100) {
+                        </p>
+                        <p>
+                                romanResult += "C";
+                        </p>
+                        <p>
+                                toConvert -= 100;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            while (toConvert >= 90 && toConvert <= 99) {
+                        </p>
+                        <p>
+                                romanResult += "XC";
+                        </p>
+                        <p>
+                                toConvert -= 90;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            while (toConvert <= 89 && toConvert >= 50) {
+                        </p>
+                        <p>
+                                romanResult += "L";
+                        </p>
+                        <p>
+                                toConvert -= 50;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            while (toConvert >= 40 && toConvert <= 49) {
+                        </p>
+                        <p>
+                                romanResult += "XL";
+                        </p>
+                        <p>
+                                toConvert -= 40;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            while (toConvert < 39 && toConvert >= 10) {
+                        </p>
+                        <p>
+                                romanResult += "X";
+                        </p>
+                        <p>
+                                toConvert -= 10;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            while (toConvert == 9) {
+                        </p>
+                        <p>            
+                                romanResult += "IX";
+                        </p>
+                        <p>
+                                toConvert -= 9;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            while (toConvert < 9 && toConvert >= 5) {
+                        </p>
+                        <p>
+                                romanResult += "V";
+                        </p>
+                        <p>
+                                toConvert -= 5;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            while (toConvert === 4) {
+                        </p>
+                        <p>
+                                romanResult += "IV";
+                        </p>
+                        <p>
+                                toConvert -= 4;
+                        </p>
+                        <p>       
+                            }
+                        </p>
+                        <p>
+                            while (toConvert < 4 && toConvert > 0) {
+                        </p>
+                        <p>
+                                romanResult += "I";
+                        </p>
+                        <p>
+                                toConvert -= 1;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            return romanResult;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                    </code>
+                </div>
+            </div>
+            <p>
+                <a href="#home" class="back-btn">
+                    <- BACK
+                </a>
+            </p>
         </div>
     </main>
     <footer>
         <div id="desktop-footer">
             <p>
-                Ignacio Castillo // 💼 Linkedin // 🚀 Github // 🔥 freeCodeCamp
+                <a href="https://neatdisorder.github.io/portfolio-2020/" target="_blank">Ignacio Castillo</a> // <a href="https://www.linkedin.com/in/nachocast92" target="_blank">💼 Linkedin</a> // <a href="https://github.com/neatdisorder" target="_blank">🚀 Github</a> // <a href="https://www.freecodecamp.org/nachocast" target="_blank">🔥 freeCodeCamp</a>
             </p>
         </div>
         <div id="mobile-footer">
             <p>
-                Ignacio Castillo
+                <a href="https://neatdisorder.github.io/portfolio-2020/" target="_blank">
+                    Ignacio Castillo
+                </a>
             </p>
             <p>
-                💼 Linkedin
+                <a href="https://www.linkedin.com/in/nachocast92" target="_blank">
+                    💼 Linkedin
+                </a>
             </p>
             <p>
-                🚀 Github
+                <a href="https://github.com/neatdisorder" target="_blank">
+                    🚀 Github
+                </a>
             </p>
             <p>
-                🔥 freeCodeCamp
+                <a href="https://www.freecodecamp.org/nachocast" target="_blank">
+                    🔥 freeCodeCamp
+                </a>
             </p>
         </div>
     </footer>
+    <script src="script.js"></script>
+    <script src="scripts/palindrome-checker.js"></script>
+    <script src="scripts/roman-numeral-converter.js"></script>
 </body>
 </html>
