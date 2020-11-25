@@ -128,51 +128,48 @@
                         <p>
                             function palindrome(str) {
                         </p>
-                        <p>
-                            let originalArrayClean = str.split('');
-                        </p>
-                        <p>
-                            let originalArrayFiltered = originalArrayClean.filter(value => value.match(/[a-z0-9]/ig));
-                        </p>
-                        <p> 
-                            let originalArrayFilteredString = originalArrayFiltered.join('');
-                        </p>
-                        <p>
-                            let originalArrayFilteredStringLower = originalArrayFilteredString.toLowerCase();
-                        </p>
-                        <p>
-                            let reversedArrayFiltered = [];
-                        </p>
-                        <p>
-                            for (let i = (originalArrayFiltered.length - 1); i >= 0; i--) {
-                        </p>
-                        <p>
-                            reversedArrayFiltered.push(originalArrayFiltered[i]);
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            let reversedArrayFilteredString = reversedArrayFiltered.join('');
-                        </p>
-                        <p>
-                            let reversedArrayFilteredStringLower = reversedArrayFilteredString.toLowerCase();
-                        </p>
-                        <p>
-                            if (originalArrayFilteredStringLower == reversedArrayFilteredStringLower) {
-                        </p>
-                        <p>
-                                return true;
-                        </p>
-                        <p>
-                            } else if (originalArrayFilteredStringLower !== reversedArrayFilteredStringLower) {
-                        </p>
-                        <p>
-                                return false;
-                        </p>
-                        <p>
-                            }
-                        </p>
+                        <div class="code-left-padding">
+                            <p>
+                                let originalArrayClean = str.split('');
+                                <br />
+                                let originalArrayFiltered = originalArrayClean.filter(value => value.match(/[a-z0-9]/ig));
+                                <br />
+                                let originalArrayFilteredString = originalArrayFiltered.join('');
+                                <br />
+                                let originalArrayFilteredStringLower = originalArrayFilteredString.toLowerCase();
+                                <br />
+                                let reversedArrayFiltered = [];
+                            </p>
+                            <p>
+                                for (let i = (originalArrayFiltered.length - 1); i >= 0; i--) {
+                                <br />
+                                <span class="code-left-padding">
+                                    reversedArrayFiltered.push(originalArrayFiltered[i]);
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                let reversedArrayFilteredString = reversedArrayFiltered.join('');
+                                <br />
+                                let reversedArrayFilteredStringLower = reversedArrayFilteredString.toLowerCase();
+                            </p>
+                            <p>
+                                if (originalArrayFilteredStringLower == reversedArrayFilteredStringLower) {
+                                <br />
+                                <span class="code-left-padding">
+                                    return true;
+                                </span>
+                                <br />
+                                } else if (originalArrayFilteredStringLower !== reversedArrayFilteredStringLower) {
+                                <br />
+                                <span class="code-left-padding">
+                                    return false;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                        </div>
                         <p>
                           }
                         </p>
@@ -308,171 +305,185 @@
                         <p>
                             function convertToRoman(num) {
                         </p>
-                        <p>
-                            let toConvert = num;
-                        </p>
-                        <p>
-                            let romanResult = "";
-                        </p>
-                        <p>
-                            while (toConvert >= 1000) {
-                        </p>
-                        <p>
-                            romanResult += "M";
-                        </p>
-                        <p>
-                            toConvert -= 1000;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            while (toConvert >= 900 && toConvert <= 999) {
-                        </p>
-                        <p>
-                                romanResult += "CM";
-                        </p>
-                        <p>
-                                toConvert -= 900;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            while (toConvert < 900 && toConvert >= 500) {
-                        </p>
-                        <p>
-                            romanResult += "D";
-                        </p>
-                        <p>
-                            toConvert -= 500;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            while (toConvert >= 400 && toConvert <= 499) {
-                        </p>
-                        <p>
-                                romanResult += "CD";
-                        </p>
-                        <p>
-                                toConvert -= 400;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            while (toConvert < 400 && toConvert >= 100) {
-                        </p>
-                        <p>
-                                romanResult += "C";
-                        </p>
-                        <p>
-                                toConvert -= 100;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            while (toConvert >= 90 && toConvert <= 99) {
-                        </p>
-                        <p>
-                                romanResult += "XC";
-                        </p>
-                        <p>
-                                toConvert -= 90;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            while (toConvert <= 89 && toConvert >= 50) {
-                        </p>
-                        <p>
-                                romanResult += "L";
-                        </p>
-                        <p>
-                                toConvert -= 50;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            while (toConvert >= 40 && toConvert <= 49) {
-                        </p>
-                        <p>
-                                romanResult += "XL";
-                        </p>
-                        <p>
-                                toConvert -= 40;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            while (toConvert < 39 && toConvert >= 10) {
-                        </p>
-                        <p>
-                                romanResult += "X";
-                        </p>
-                        <p>
-                                toConvert -= 10;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            while (toConvert == 9) {
-                        </p>
-                        <p>            
-                                romanResult += "IX";
-                        </p>
-                        <p>
-                                toConvert -= 9;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            while (toConvert < 9 && toConvert >= 5) {
-                        </p>
-                        <p>
-                                romanResult += "V";
-                        </p>
-                        <p>
-                                toConvert -= 5;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            while (toConvert === 4) {
-                        </p>
-                        <p>
-                                romanResult += "IV";
-                        </p>
-                        <p>
-                                toConvert -= 4;
-                        </p>
-                        <p>       
-                            }
-                        </p>
-                        <p>
-                            while (toConvert < 4 && toConvert > 0) {
-                        </p>
-                        <p>
-                                romanResult += "I";
-                        </p>
-                        <p>
-                                toConvert -= 1;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            return romanResult;
-                        </p>
+                        <div class="code-left-padding">
+                            <p>
+                                let toConvert = num;
+                                <br />
+                                let romanResult = "";
+                            </p>
+                            <p>
+                                while (toConvert >= 1000) {
+                                <br />
+                                <span class="code-left-padding">
+                                    romanResult += "M";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                toConvert -= 1000;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                while (toConvert >= 900 && toConvert <= 999) {
+                                <br />
+                                <span class="code-left-padding">
+                                    romanResult += "CM";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    toConvert -= 900;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                while (toConvert < 900 && toConvert >= 500) {
+                                <br />
+                                <span class="code-left-padding">
+                                romanResult += "D";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                toConvert -= 500;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                while (toConvert >= 400 && toConvert <= 499) {
+                                <br />
+                                <span class="code-left-padding">
+                                    romanResult += "CD";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    toConvert -= 400;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                while (toConvert < 400 && toConvert >= 100) {
+                                <br />
+                                <span class="code-left-padding">
+                                    romanResult += "C";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    toConvert -= 100;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                while (toConvert >= 90 && toConvert <= 99) {
+                                <br />
+                                <span class="code-left-padding">
+                                    romanResult += "XC";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    toConvert -= 90;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                while (toConvert <= 89 && toConvert >= 50) {
+                                <br />
+                                <span class="code-left-padding">
+                                    romanResult += "L";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    toConvert -= 50;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                while (toConvert >= 40 && toConvert <= 49) {
+                                <br />
+                                <span class="code-left-padding">
+                                    romanResult += "XL";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    toConvert -= 40;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                while (toConvert < 39 && toConvert >= 10) {
+                                <br />
+                                <span class="code-left-padding">
+                                    romanResult += "X";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    toConvert -= 10;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                while (toConvert == 9) {
+                                <br />
+                                <span class="code-left-padding">      
+                                    romanResult += "IX";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    toConvert -= 9;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                while (toConvert < 9 && toConvert >= 5) {
+                                <br />
+                                <span class="code-left-padding">
+                                    romanResult += "V";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    toConvert -= 5;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                while (toConvert === 4) {
+                                <br />
+                                <span class="code-left-padding">
+                                    romanResult += "IV";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    toConvert -= 4;
+                                </span>
+                                <br />   
+                                }
+                            </p>
+                            <p>
+                                while (toConvert < 4 && toConvert > 0) {
+                                <br />
+                                <span class="code-left-padding">
+                                    romanResult += "I";
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    toConvert -= 1;
+                                </span>
+                                <br />  
+                                }
+                            </p>
+                            <p>
+                                return romanResult;
+                            </p>
+                        </div>
                         <p>
                             }
                         </p>
@@ -547,49 +558,54 @@
                     <code>
                         <p>
                             let cipher = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-                        </p>
-                        <p>
+                        <br />
                             let abc = ["N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
                         </p>
                         <p>
                             function rot13(str) {
                         </p>
-                        <p>
-                            let strArray = str.split('');
-                        </p>
-                        <p>
-                            let resultArray = [];
-                        </p>
-                        <p>
-                            console.log(strArray);
-                        </p>
-                        <p>
-                            for (let i = 0; i < strArray.length; i++) {
-                        </p>
-                        <p>
-                            if (cipher.indexOf(strArray[i]) >= 0) {
-                        </p>
-                        <p>
-                            resultArray.push(abc[cipher.indexOf(strArray[i])]);
-                        </p>
-                        <p>
-                            } else {
-                        </p>
-                        <p>
-                            resultArray.push(strArray[i]);
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            let result = resultArray.join('');
-                        </p>
-                        <p>
-                            return result;
-                        </p>
+                        <div class="code-left-padding">
+                            <p>
+                                let strArray = str.split('');
+                            <br />
+                                let resultArray = [];
+                            </p>
+                            <p>
+                                for (let i = 0; i < strArray.length; i++) {
+                                <br />
+                                <span class="code-left-padding">
+                                if (cipher.indexOf(strArray[i]) >= 0) {
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    <span class="code-left-padding">
+                                resultArray.push(abc[cipher.indexOf(strArray[i])]);
+                                    </span>
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                } else {
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    <span class="code-left-padding">
+                                resultArray.push(strArray[i]);
+                                    </span>
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    }
+                                </span>
+                                <br />
+                                }
+                            </p>
+                            <p>
+                                let result = resultArray.join('');
+                            </p>
+                            <p>
+                                return result;
+                            </p>
+                        </div>
                         <p>
                             }
                         </p>
@@ -717,108 +733,138 @@
                         <p>
                             function telephoneCheck(str) {
                         </p>
-                        <p>
-                            let inputArray = str.split('');
-                        </p>
-                        <p>
-                            let cleanNumbers = inputArray.filter(value => value.match(/[0-9]/g));
-                        </p>
-                        <p>
-                            let allNumDiez = /^\d{10}/g;
-                        </p>
-                        <p>
-                            let hashDiez = /^\d{3}[-]\d{3}[-]\d{4}/g;
-                        </p>
-                        <p>
-                            let parenHashDiez = /^[(]\d{3}[)]\d{3}[-]\d{4}/g;
-                        </p>
-                        <p>
-                            let espacioGuionesOnce = /^[1]\s\d{3}[-]\d{3}[-]\d{4}/g;
-                        </p>
-                        <p>
-                            let espacioParentesisGuion = /^[1]\s[(]\d{3}[)]\s\d{3}[-]\d{4}/g;
-                        </p>
-                        <p>
-                            let parentesisGuionOnce = /^[1][(]\d{3}[)]\d{3}[-]\d{4}/g;
-                        </p>
-                        <p>
-                            let espaciosOnce = /^[1]\s\d{3}\s\d{3}\s\d{4}/g;
-                        </p>
-                        <p>
-                            if (cleanNumbers.length == 10) {
-                        </p>
-                        <p>
-                            if (allNumDiez.test(str)) {
-                        </p>
-                        <p>
-                            return true;
-                        </p>
-                        <p>
-                            } else if (hashDiez.test(str)) {
-                        </p>
-                        <p>
-                            return true;
-                        </p>
-                        <p>
-                            } else if (parenHashDiez.test(str)) {
-                        </p>
-                        <p>
-                            return true;
-                        </p>
-                        <p>
-                            } else {
-                        </p>
-                        <p>
-                            return false;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            } else if (cleanNumbers.length == 11) {
-                        </p>
-                        <p>
-                            if (espacioGuionesOnce.test(str)) {
-                        </p>
-                        <p>
-                            return true;
-                        </p>
-                        <p>
-                            } else if (espacioParentesisGuion.test(str)) {
-                        </p>
-                        <p>
-                            return true;
-                        </p>
-                        <p>
-                            } else if (parentesisGuionOnce.test(str)) {
-                        </p>
-                        <p>
-                            return true;
-                        </p>
-                        <p>
-                            } else if (espaciosOnce.test(str)) {
-                        </p>
-                        <p>
-                            return true;
-                        </p>
-                        <p>
-                            } else {
-                        </p>
-                        <p>
-                            return false;
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            } else {
-                        </p>
-                        <p>
-                            return false;
-                        </p>
-                        <p>
-                            }
-                        </p>
+                        <div class="code-left-padding">
+                            <p>
+                                let inputArray = str.split('');
+                                <br />
+                                let cleanNumbers = inputArray.filter(value => value.match(/[0-9]/g));
+                                <br />
+                                let allNumDiez = /^\d{10}/g;
+                                <br />
+                                let hashDiez = /^\d{3}[-]\d{3}[-]\d{4}/g;
+                                <br />
+                                let parenHashDiez = /^[(]\d{3}[)]\d{3}[-]\d{4}/g;
+                                <br />
+                                let espacioGuionesOnce = /^[1]\s\d{3}[-]\d{3}[-]\d{4}/g;
+                                <br />
+                                let espacioParentesisGuion = /^[1]\s[(]\d{3}[)]\s\d{3}[-]\d{4}/g;
+                                <br />
+                                let parentesisGuionOnce = /^[1][(]\d{3}[)]\d{3}[-]\d{4}/g;
+                                <br />
+                                let espaciosOnce = /^[1]\s\d{3}\s\d{3}\s\d{4}/g;
+                            </p>
+                            <p>
+                                if (cleanNumbers.length == 10) {
+                                <br />
+                                <span class="code-left-padding">
+                                    if (allNumDiez.test(str)) {
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    <span class="code-left-padding">
+                                return true;
+                                    </span>
+                                </span>    
+                                <br />
+                                <span class="code-left-padding">
+                                    } else if (hashDiez.test(str)) {
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    <span class="code-left-padding">
+                                return true;
+                                    </span>
+                                </span>    
+                                <br />
+                                <span class="code-left-padding">
+                                    } else if (parenHashDiez.test(str)) {
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    <span class="code-left-padding">
+                                return true;
+                                    </span>
+                                </span>    
+                                <br />
+                                <span class="code-left-padding">
+                                    } else {
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    <span class="code-left-padding">
+                                return false;
+                                    </span>
+                                </span>    
+                                <br />
+                                <span class="code-left-padding">
+                                    }
+                                </span>
+                            <br />
+                                } else if (cleanNumbers.length == 11) {
+                                <br />
+                                <span class="code-left-padding">
+                                if (espacioGuionesOnce.test(str)) {
+                                </span>    
+                                <br />
+                                <span class="code-left-padding">
+                                    <span class="code-left-padding">
+                                return true;
+                                    </span>
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    } else if (espacioParentesisGuion.test(str)) {
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    <span class="code-left-padding">
+                                return true;
+                                    </span>
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    } else if (parentesisGuionOnce.test(str)) {
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    <span class="code-left-padding">
+                                return true;
+                                    </span>
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    } else if (espaciosOnce.test(str)) {
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    <span class="code-left-padding">
+                                return true;
+                                    </span>
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                } else {
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    <span class="code-left-padding">
+                                return false;
+                                    </span>
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    }
+                                </span>
+                                <br />
+                                } else {
+                                <br />
+                                <span class="code-left-padding">
+                                return false;
+                                </span>
+                                <br />
+                                }
+                            </p>
+                        </div>
                         <p>
                             }
                         </p>

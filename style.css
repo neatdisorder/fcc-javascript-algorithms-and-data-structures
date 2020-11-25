@@ -84,6 +84,10 @@ code {
     margin-bottom: 0;
 }
 
+.code-left-padding {
+    padding-left: 1em;
+}
+
 #botones a {
     font-family: 'Roboto Mono', monospace;
     color: #1b1b32;
