@@ -20,12 +20,23 @@ document.getElementById('telephone-number-validator-btn').addEventListener('clic
     document.getElementById('telephone-number-validator').style.display = 'flex';
 });
 
+document.getElementById('cash-register-btn').addEventListener('click', function() {
+    document.getElementById('home').style.display = 'none';
+    document.getElementById('cash-register').style.display = 'flex';
+});
+
 for (let i = 0; i < document.getElementsByClassName('back-btn').length; i++) {
     document.getElementsByClassName('back-btn')[i].addEventListener('click', function() {
         document.getElementById('palindrome-checker').style.display = 'none';
         document.getElementById('roman-numeral-converter').style.display = 'none';
         document.getElementById('caesars-cipher').style.display = 'none';
         document.getElementById('telephone-number-validator').style.display = 'none';
+        document.getElementById('cash-register').style.display = 'none';
+        document.getElementById('palindrome-result').style.visibility = 'hidden';
+        document.getElementById('roman-result').style.visibility = 'hidden';
+        document.getElementById('caesars-result').style.visibility = 'hidden';
+        document.getElementById('telephone-result').style.visibility = 'hidden';
+        document.getElementById('cash-result').style.visibility = 'hidden';
         document.getElementById('home').style.display = 'block';
     });
 }
@@ -143,5 +154,34 @@ document.getElementById('show-telephone-tests').addEventListener('click', functi
         document.getElementById('telephone-tests').style.display = 'none';
         document.getElementById('show-telephone-tests').innerText = '▾ View provided test cases';
         telephoneTests = false;
+    }
+});
+
+// CASH REGISTER
+
+let cashCode = false;
+let cashTests = false;
+
+document.getElementById('show-cash-code').addEventListener('click', function() {
+    if (cashCode == false) {
+        document.getElementById('cash-code').style.display = 'block';
+        document.getElementById('show-cash-code').innerText = '▴ Close code solution';
+        cashCode = true;
+    } else if (cashCode == true) {
+        document.getElementById('cash-code').style.display = 'none';
+        document.getElementById('show-cash-code').innerText = '▾ View code solution';
+        cashCode = false;
+    }
+});
+
+document.getElementById('show-cash-tests').addEventListener('click', function() {
+    if (cashTests == false) {
+        document.getElementById('cash-tests').style.display = 'block';
+        document.getElementById('show-cash-tests').innerText = '▴ Close provided test cases';
+        cashTests = true;
+    } else if (cashTests == true) {
+        document.getElementById('cash-tests').style.display = 'none';
+        document.getElementById('show-cash-tests').innerText = '▾ View provided test cases';
+        cashTests = false;
     }
 });

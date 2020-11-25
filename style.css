@@ -229,6 +229,42 @@ footer a:hover {
     visibility: hidden;
 }
 
+/* -- CASH CSS -- */
+
+#cash-register {
+    display: none;
+    flex-direction: column;
+}
+
+#cash-code {
+    display: none;
+}
+
+#cash-tests {
+    display: none;
+}
+
+#cash-result {
+    visibility: hidden;
+    text-align: left;
+}
+
+#cash-radio-buttons {
+    text-align: justify;
+}
+
+#cash-radio-buttons input {
+    width: 13px;
+}
+
+#cash-radio-buttons div {
+    margin: 0.5em   ;
+}
+
+#cash-button {
+    margin-top: 1em;
+}
+
 /* -- DESKTOP STYLE -- */
 
 @media only screen and (min-width: 992px) {

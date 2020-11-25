@@ -39,7 +39,7 @@
                 <a href="#telephone-number-validator" id="telephone-number-validator-btn">
                     Telephone Number Validator
                 </a>
-                <a href="#">
+                <a href="#cash-register" id="cash-register-btn">
                     Cash Register
                 </a>
             </div>
@@ -715,6 +715,227 @@
                 <div id="telephone-code" class="div-code">
                     <code>
                         <p>
+                            function telephoneCheck(str) {
+                        </p>
+                        <p>
+                            let inputArray = str.split('');
+                        </p>
+                        <p>
+                            let cleanNumbers = inputArray.filter(value => value.match(/[0-9]/g));
+                        </p>
+                        <p>
+                            let allNumDiez = /^\d{10}/g;
+                        </p>
+                        <p>
+                            let hashDiez = /^\d{3}[-]\d{3}[-]\d{4}/g;
+                        </p>
+                        <p>
+                            let parenHashDiez = /^[(]\d{3}[)]\d{3}[-]\d{4}/g;
+                        </p>
+                        <p>
+                            let espacioGuionesOnce = /^[1]\s\d{3}[-]\d{3}[-]\d{4}/g;
+                        </p>
+                        <p>
+                            let espacioParentesisGuion = /^[1]\s[(]\d{3}[)]\s\d{3}[-]\d{4}/g;
+                        </p>
+                        <p>
+                            let parentesisGuionOnce = /^[1][(]\d{3}[)]\d{3}[-]\d{4}/g;
+                        </p>
+                        <p>
+                            let espaciosOnce = /^[1]\s\d{3}\s\d{3}\s\d{4}/g;
+                        </p>
+                        <p>
+                            if (cleanNumbers.length == 10) {
+                        </p>
+                        <p>
+                            if (allNumDiez.test(str)) {
+                        </p>
+                        <p>
+                            return true;
+                        </p>
+                        <p>
+                            } else if (hashDiez.test(str)) {
+                        </p>
+                        <p>
+                            return true;
+                        </p>
+                        <p>
+                            } else if (parenHashDiez.test(str)) {
+                        </p>
+                        <p>
+                            return true;
+                        </p>
+                        <p>
+                            } else {
+                        </p>
+                        <p>
+                            return false;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            } else if (cleanNumbers.length == 11) {
+                        </p>
+                        <p>
+                            if (espacioGuionesOnce.test(str)) {
+                        </p>
+                        <p>
+                            return true;
+                        </p>
+                        <p>
+                            } else if (espacioParentesisGuion.test(str)) {
+                        </p>
+                        <p>
+                            return true;
+                        </p>
+                        <p>
+                            } else if (parentesisGuionOnce.test(str)) {
+                        </p>
+                        <p>
+                            return true;
+                        </p>
+                        <p>
+                            } else if (espaciosOnce.test(str)) {
+                        </p>
+                        <p>
+                            return true;
+                        </p>
+                        <p>
+                            } else {
+                        </p>
+                        <p>
+                            return false;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            } else {
+                        </p>
+                        <p>
+                            return false;
+                        </p>
+                        <p>
+                            }
+                        </p>
+                        <p>
+                            }
+                        </p>
+                    </code>
+                </div>
+            </div>
+            <p>
+                <a href="#home" class="back-btn">
+                    <- BACK
+                </a>
+            </p>
+        </div>
+        <div id="cash-register">
+            <p>
+                <a href="#home" class="back-btn">
+                    <- BACK
+                </a>
+            </p>
+            <h1>
+                Cash Register
+            </h1>
+            <p>
+                Design a cash register drawer function <code>checkCashRegister()</code> that accepts purchase price as the first argument (<code>price</code>), payment as the second argument (<code>cash</code>), and cash-in-drawer (<code>cid</code>) as the third argument.
+            </p>
+            <p>
+                <code>cid</code> is a 2D array listing available currency.
+            </p>
+            <p>
+                The <code>checkCashRegister()</code> function should always return an object with a <code>status</code> key and a <code>change</code> key.
+            </p>
+            <p>
+                Return <code>{status: "INSUFFICIENT_FUNDS", change: []}</code> if cash-in-drawer is less than the change due, or if you cannot return the exact change.
+            </p>
+            <p>
+                Return <code>{status: "CLOSED", change: [...]}</code> with cash-in-drawer as the value for the key change if it is equal to the change due.
+            </p>
+            <p>
+                Otherwise, return <code>{status: "OPEN", change: [...]}</code>, with the change due in coins and bills, sorted in highest to lowest order, as the value of the <code>change</code> key.
+            </p>
+            <div>
+                <p>
+                    Choose one of the test cases.
+                </p>
+                <div id="cash-radio-buttons">
+                    <div>
+                        <input type="radio" id="cash-1" name="cash-register-input" value="cash-1" checked="checked">
+                            <label for="cash-1">
+                                <code>
+                                    19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]
+                                </code>
+                            </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="cash-2" name="cash-register-input" value="cash-2">
+                            <label for="cash-2">
+                                <code>    
+                                    3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]
+                                </code>
+                            </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="cash-3" name="cash-register-input" value="cash-3">
+                            <label for="cash-3">
+                                <code>
+                                    19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]
+                                </code>
+                            </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="cash-4" name="cash-register-input" value="cash-4">
+                            <label for="cash-4">
+                                <code>
+                                    19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]
+                                </code>
+                            </label>
+                    </div>
+                    <button id="cash-button">
+                        TEST
+                    </button>
+                </div>
+            </div>
+            <p id="cash-result">
+                ⚫
+            </p>
+            <div>
+                <p>
+                    <a href="#show-cash-tests" id="show-cash-tests">
+                        ▾ View provided test cases
+                    </a>
+                </p>
+                <div id="cash-tests">
+                    <p>
+                        <code>19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]</code> should return an object.
+                    </p>
+                    <p>
+                        <code>19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]</code> should return <code>{status: "OPEN", change: [["QUARTER", 0.5]]}</code>.
+                    </p>
+                    <p>
+                        <code>3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]</code> should return <code>{status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}</code>.
+                    </p>
+                    <p>
+                        <code>19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]</code> should return <code>{status: "INSUFFICIENT_FUNDS", change: []}</code>>.
+                    </p>
+                    <p>
+                        <code>19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]</code> should return <code>{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}</code>.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <p>
+                    <a href="#show-cash-code" id="show-cash-code">
+                        ▾ View code solution
+                    </a>
+                </p>
+                <div id="cash-code" class="div-code">
+                    <code>
+                        <p>
                             let cipher = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
                         </p>
                         <p>
@@ -806,5 +1027,6 @@
     <script src="scripts/roman-numeral-converter.js"></script>
     <script src="scripts/caesars-cipher.js"></script>
     <script src="scripts/telephone-number-validator.js"></script>
+    <script src="scripts/cash-register.js"></script>
 </body>
 </html>
