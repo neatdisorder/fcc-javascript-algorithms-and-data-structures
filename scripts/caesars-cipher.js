@@ -6,7 +6,9 @@ let abc = ["N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "A",
 
 function rot13(str) {
 
-  let strArray = str.split('');
+  let strUppercase = str.toUpperCase();
+
+  let strArray = strUppercase.split('');
 
   let resultArray = [];
 
@@ -26,7 +28,7 @@ function rot13(str) {
 
   console.log(result);
 
-  document.getElementById('caesars-result').innerText = `📖 ${document.getElementById('caesars-input').value} translates to "${result}".`;
+  document.getElementById('caesars-result').innerText = `📖 ${document.getElementById('caesars-input').value.toUpperCase()} translates to "${result}".`;
   document.getElementById('caesars-result').style.visibility = 'visible';
 
   return result;

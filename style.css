@@ -215,6 +215,10 @@ footer a:hover {
     visibility: hidden;
 }
 
+#caesars-input {
+    text-transform: uppercase;
+}
+
 /* -- TELEPHONE CSS -- */
 
 #telephone-number-validator {
