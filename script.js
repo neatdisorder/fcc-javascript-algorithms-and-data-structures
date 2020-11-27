@@ -25,6 +25,8 @@ document.getElementById('cash-register-btn').addEventListener('click', function(
     document.getElementById('cash-register').style.display = 'flex';
 });
 
+// BOTON <- BACK
+
 for (let i = 0; i < document.getElementsByClassName('back-btn').length; i++) {
     document.getElementsByClassName('back-btn')[i].addEventListener('click', function() {
         document.getElementById('palindrome-checker').style.display = 'none';
@@ -38,6 +40,37 @@ for (let i = 0; i < document.getElementsByClassName('back-btn').length; i++) {
         document.getElementById('telephone-result').style.visibility = 'hidden';
         document.getElementById('cash-result').style.visibility = 'hidden';
         document.getElementById('home').style.display = 'block';
+        // CLOSE DROPDOWNS
+        document.getElementById('palindrome-code').style.display = 'none';
+        document.getElementById('show-palindrome-code').innerText = '▾ View code solution';
+        palindromeCode = false;
+        document.getElementById('palindrome-tests').style.display = 'none';
+        document.getElementById('show-palindrome-tests').innerText = '▾ View provided test cases';
+        palindromeTests = false;
+        document.getElementById('roman-code').style.display = 'none';
+        document.getElementById('show-roman-code').innerText = '▾ View code solution';
+        romanCode = false;
+        document.getElementById('roman-tests').style.display = 'none';
+        document.getElementById('show-roman-tests').innerText = '▾ View provided test cases';
+        romanTests = false;
+        document.getElementById('caesars-code').style.display = 'none';
+        document.getElementById('show-caesars-code').innerText = '▾ View code solution';
+        caesarsCode = false;
+        document.getElementById('caesars-tests').style.display = 'none';
+        document.getElementById('show-caesars-tests').innerText = '▾ View provided test cases';
+        caesarsTests = false;
+        document.getElementById('telephone-code').style.display = 'none';
+        document.getElementById('show-telephone-code').innerText = '▾ View code solution';
+        telephoneCode = false;
+        document.getElementById('telephone-tests').style.display = 'none';
+        document.getElementById('show-telephone-tests').innerText = '▾ View provided test cases';
+        telephoneTests = false;
+        document.getElementById('cash-code').style.display = 'none';
+        document.getElementById('show-cash-code').innerText = '▾ View code solution';
+        cashCode = false;
+        document.getElementById('cash-tests').style.display = 'none';
+        document.getElementById('show-cash-tests').innerText = '▾ View provided test cases';
+        cashTests = false;
     });
 }
 
