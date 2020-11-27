@@ -198,7 +198,7 @@
                 All roman numerals answers should be provided in upper-case.
             </p>
             <div>
-                <input value="Type a 4-digit number here." id="roman-input">        
+                <input value="Type a 4-digit number here." id="roman-input" type="number" min="1" max="9999">        
                 </input>
                 <button id="roman-button">
                     TEST
@@ -799,7 +799,7 @@
                                 <span class="code-left-padding">
                                     }
                                 </span>
-                            <br />
+                                <br />
                                 } else if (cleanNumbers.length == 11) {
                                 <br />
                                 <span class="code-left-padding">
@@ -906,7 +906,7 @@
             </p>
             <div>
                 <p>
-                    Choose one of the test cases.
+                    Choose one of the test cases:
                 </p>
                 <div id="cash-radio-buttons">
                     <div>
@@ -982,52 +982,330 @@
                 <div id="cash-code" class="div-code">
                     <code>
                         <p>
-                            let cipher = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+                            const valueOfPennies = 0.01, valueOfNickels = 0.05, valueOfDimes = 0.1, valueOfQuarters = 0.25, valueOfDollars = 1, valueOfFives = 5, valueOfTens = 10, valueOfTwenties = 20, valueOfHundreds = 100;
                         </p>
                         <p>
-                            let abc = ["N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
-                        </p>
-                        <p>
-                            function rot13(str) {
-                        </p>
-                        <p>
-                            let strArray = str.split('');
-                        </p>
-                        <p>
-                            let resultArray = [];
-                        </p>
-                        <p>
-                            console.log(strArray);
-                        </p>
-                        <p>
-                            for (let i = 0; i < strArray.length; i++) {
-                        </p>
-                        <p>
-                            if (cipher.indexOf(strArray[i]) >= 0) {
-                        </p>
-                        <p>
-                            resultArray.push(abc[cipher.indexOf(strArray[i])]);
-                        </p>
-                        <p>
-                            } else {
-                        </p>
-                        <p>
-                            resultArray.push(strArray[i]);
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            }
-                        </p>
-                        <p>
-                            let result = resultArray.join('');
-                        </p>
-                        <p>
-                            return result;
-                        </p>
-                        <p>
-                            }
+                            function checkCashRegister(price, cash, cid) {
+                                <div class="code-left-padding">
+                                let numberOfPennies = (cid[0][1]/valueOfPennies), numberOfNickels = (cid[1][1]/valueOfNickels), numberOfDimes = (cid[2][1]/valueOfDimes), numberOfQuarters = (cid[3][1]/valueOfQuarters), numberOfDollars = (cid[4][1]/valueOfDollars), numberOfFives = (cid[5][1]/valueOfFives), numberOfTens = (cid[6][1]/valueOfTens), numberOfTwenties = (cid[7][1]/valueOfTwenties), numberOfHundreds = (cid[8][1]/valueOfHundreds);
+                                <br />
+                                let valueAndNumber = [[valueOfPennies, numberOfPennies], [valueOfNickels, parseFloat(numberOfNickels.toFixed(2))], [valueOfDimes, numberOfDimes], [valueOfQuarters, numberOfQuarters], [valueOfDollars, numberOfDollars], [valueOfFives, numberOfFives], [valueOfTens, numberOfTens], [valueOfTwenties, numberOfTwenties], [valueOfHundreds, numberOfHundreds]];
+                                <br />
+                                let changeInReturn = [];
+                                <br />
+                                let penniesNeeded = 0, nickelsNeeded = 0, dimesNeeded = 0, quartersNeeded = 0, dollarsNeeded = 0, fivesNeeded = 0, tensNeeded = 0, twentiesNeeded = 0, hundredsNeeded = 0;
+                                <br />
+                                let changeDue = cash - price;
+                                <br />
+                                let totalCid = 0;
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                for (let i = 0; i < cid.length; i++) {
+                                    <br />
+                                    <span class="code-left-padding">
+                                        totalCid += cid[i][1];
+                                    </span>
+                                    <br />
+                                }
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                    if (totalCid == changeDue) {
+                                <br />
+                                    <span class="code-left-padding">
+                                        let changeInReturn = cid;
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        let changeEqualReturn = new Return("CLOSED", changeInReturn);
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        return changeEqualReturn;
+                                    </span>
+                                <br />
+                                    } else if (totalCid < changeDue) {
+                                <br />
+                                    <span class="code-left-padding">
+                                        let changeLessReturn = new Return("INSUFFICIENT_FUNDS", changeInReturn);
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        return changeLessReturn;
+                                    </span>
+                                <br />
+                                    } else if (totalCid > changeDue) {
+                                <br />
+                                    <span class="code-left-padding">
+                                        while (changeDue >= valueOfHundreds) {
+                                    </span>
+                                <br />
+                                    <span class="code-left-padding">
+                                        changeDue -= 100;
+                                    </span>
+                                <br />
+                                    <span class="code-left-padding">
+                                        hundredsNeeded += 1;
+                                    </span>
+                                <br />
+                                    <span class="code-left-padding">
+                                        changeDue = parseFloat(changeDue.toFixed(2));
+                                    </span>
+                                <br />
+                                }
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                  while (changeDue >= valueOfTwenties) {
+                                <br />
+                                    <span class="code-left-padding">
+                                        changeDue -= 20;
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        twentiesNeeded += 1;
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        changeDue = parseFloat(changeDue.toFixed(2));
+                                    </span>
+                                <br />
+                                }
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                    while (changeDue >= valueOfTens) {
+                                    <br />
+                                    <span class="code-left-padding">
+                                        changeDue -= 10;
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        tensNeeded += 1;
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                  changeDue = parseFloat(changeDue.toFixed(2));
+                                    </span>
+                                    <br />
+                                }
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                    while (changeDue >= valueOfFives) {
+                                <br />
+                                <span class="code-left-padding">        
+                                    changeDue -= 5;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    fivesNeeded += 1;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                  changeDue = parseFloat(changeDue.toFixed(2));
+                                </span>
+                                <br />
+                                }
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                    while (changeDue >= valueOfDollars) {
+                                <br />
+                                <span class="code-left-padding">     
+                                    changeDue -= 1;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    dollarsNeeded += 1;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    changeDue = parseFloat(changeDue.toFixed(2));
+                                </span>
+                                <br />
+                                }
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                    while (changeDue >= valueOfQuarters) {
+                                <br />
+                                <span class="code-left-padding">     
+                                    changeDue -= 0.25;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    quartersNeeded += 1;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    changeDue = parseFloat(changeDue.toFixed(2));
+                                </span>
+                                <br />
+                                }
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                    while (changeDue >= valueOfDimes) {
+                                <br />
+                                <span class="code-left-padding">     
+                                    changeDue -= 0.1;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    dimesNeeded += 1;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    changeDue = parseFloat(changeDue.toFixed(2));
+                                </span>
+                                <br />
+                                }
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                    while (changeDue >= valueOfNickels) {
+                                <br />
+                                <span class="code-left-padding">     
+                                    changeDue -= 0.05;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    nickelsNeeded += 1;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    changeDue = parseFloat(changeDue.toFixed(2));
+                                </span>
+                                <br />
+                                }
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                    while (changeDue >= valueOfPennies) {
+                                <br />
+                                <span class="code-left-padding">     
+                                    changeDue -= 0.01;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    penniesNeeded += 1;
+                                </span>
+                                <br />
+                                <span class="code-left-padding">
+                                    changeDue = parseFloat(changeDue.toFixed(2));
+                                </span>
+                                <br />
+                                }
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                let provisionalChange = [["HUNDRED", hundredsNeeded * valueOfHundreds], ["TWENTY", twentiesNeeded * valueOfTwenties], ["TEN", tensNeeded * valueOfTens], ["FIVE", fivesNeeded * valueOfFives], ["ONE", dollarsNeeded * valueOfDollars], ["QUARTER", quartersNeeded * valueOfQuarters], ["DIME", dimesNeeded * valueOfDimes], ["NICKEL", nickelsNeeded * valueOfNickels], ["PENNY", penniesNeeded * valueOfPennies]];
+                                console.log(provisionalChange);
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                for (let i = 0, j = (cid.length - 1); i < provisionalChange.length; i++, j--) {
+                                  <br />
+                                  <br />
+                                    <span class="code-left-padding">
+                                        if (provisionalChange[i][1] == 0) {
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        <span class="code-left-padding">
+                                            changeInReturn.push(provisionalChange[i]);
+                                        </span>
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        } else if (provisionalChange[i][1] < cid[j][1]) {
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        <span class="code-left-padding">
+                                            changeInReturn.push(provisionalChange[i]);
+                                        </span>
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        } else if (provisionalChange[i][1] >= cid[j][1]) {
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        <span class="code-left-padding">
+                                        let changeLeft = provisionalChange[i][1] - cid[j][1];
+                                    </span>
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        <span class="code-left-padding">
+                                            if (i < 7) {
+                                        </span>
+                                    </span>
+                                    <br />
+                                        <span class="code-left-padding">
+                                            <span class="code-left-padding"> 
+                                                <span class="code-left-padding"> 
+                                      provisionalChange[(i+1)][1] += changeLeft;
+                                                </span>
+                                            </span>
+                                        </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        <span class="code-left-padding">
+                                            } else if (i == 7) {
+                                        </span>
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        <span class="code-left-padding"> 
+                                            <span class="code-left-padding">
+                                            let changeInReturn = [];
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        <span class="code-left-padding">
+                                            <span class="code-left-padding">
+                                      let changeLessReturn = new Return("INSUFFICIENT_FUNDS", changeInReturn);
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        <span class="code-left-padding"> 
+                                            <span class="code-left-padding"> 
+                                      return changeLessReturn;
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                        <span class="code-left-padding">
+                                    }
+                                    </span>
+                                    </span>
+                                    <br />
+                                    <span class="code-left-padding">
+                                  }
+                                </span>
+                                <br />
+                                <br />
+                                }
+                                </div>
+                                <br />
+                                <div class="code-left-padding">
+                                let finalChange = changeInReturn.filter(value => value[1] != 0);
+                                <br />
+                                let changeMoreReturn = new Return("OPEN", finalChange);
+                                <br />
+                                return changeMoreReturn;
+                                </div>
+                                <br />
+                              }
                         </p>
                     </code>
                 </div>
