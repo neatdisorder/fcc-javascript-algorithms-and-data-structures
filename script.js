@@ -218,3 +218,130 @@ document.getElementById('show-cash-tests').addEventListener('click', function() 
         cashTests = false;
     }
 });
+
+// APARICIÓN DE DIVS CON HASH
+
+console.log(typeof location.hash);
+console.log(location.hash);
+
+switch (location.hash) {
+
+    case '#home':
+        document.getElementById('palindrome-checker').style.display = 'none';
+        document.getElementById('roman-numeral-converter').style.display = 'none';
+        document.getElementById('caesars-cipher').style.display = 'none';
+        document.getElementById('telephone-number-validator').style.display = 'none';
+        document.getElementById('cash-register').style.display = 'none';
+        document.getElementById('palindrome-result').style.visibility = 'hidden';
+        document.getElementById('roman-result').style.visibility = 'hidden';
+        document.getElementById('caesars-result').style.visibility = 'hidden';
+        document.getElementById('telephone-result').style.visibility = 'hidden';
+        document.getElementById('cash-result').style.visibility = 'hidden';
+        document.getElementById('home').style.display = 'block';
+        break;
+
+    case '#palindrome-checker':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('palindrome-checker').style.display = 'flex';
+        break;
+
+    case '#show-palindrome-tests':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('palindrome-checker').style.display = 'flex';
+        document.getElementById('palindrome-tests').style.display = 'block';
+        document.getElementById('show-palindrome-tests').innerText = '▴ Close provided test cases';
+        palindromeTests = true;
+        break;
+
+    case '#show-palindrome-code':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('palindrome-checker').style.display = 'flex';
+        document.getElementById('palindrome-code').style.display = 'block';
+        document.getElementById('show-palindrome-code').innerText = '▴ Close code solution';
+        palindromeCode = true;
+        break;
+
+    case '#roman-numeral-converter':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('roman-numeral-converter').style.display = 'flex';
+        break;
+
+    case '#show-roman-tests':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('roman-numeral-converter').style.display = 'flex';
+        document.getElementById('roman-tests').style.display = 'block';
+        document.getElementById('show-roman-tests').innerText = '▴ Close provided test cases';
+        romanTests = true;
+        break;
+
+    case '#show-roman-code':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('roman-numeral-converter').style.display = 'flex';
+        document.getElementById('roman-code').style.display = 'block';
+        document.getElementById('show-roman-code').innerText = '▴ Close code solution';
+        romanCode = true;
+        break;
+
+    case '#caesars-cipher':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('caesars-cipher').style.display = 'flex';
+        break;
+    case '#show-caesars-tests':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('caesars-cipher').style.display = 'flex';
+        document.getElementById('caesars-tests').style.display = 'block';
+        document.getElementById('show-caesars-tests').innerText = '▴ Close provided test cases';
+        caesarsTests = true;
+        break;
+
+    case '#show-caesars-code':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('caesars-cipher').style.display = 'flex';
+        document.getElementById('caesars-code').style.display = 'block';
+        document.getElementById('show-caesars-code').innerText = '▴ Close code solution';
+        caesarsCode = true;
+        break;
+
+    case '#telephone-number-validator':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('telephone-number-validator').style.display = 'flex';
+        break;
+
+    case '#show-telephone-tests':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('telephone-number-validator').style.display = 'flex';
+        document.getElementById('telephone-tests').style.display = 'block';
+        document.getElementById('show-telephone-tests').innerText = '▴ Close provided test cases';
+        telephoneTests = true;
+        break;
+
+    case '#show-telephone-code':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('telephone-number-validator').style.display = 'flex';
+        document.getElementById('telephone-code').style.display = 'block';
+        document.getElementById('show-telephone-code').innerText = '▴ Close code solution';
+        telephoneCode = true;
+        break;
+
+    case '#cash-register':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('cash-register').style.display = 'flex';
+        break;
+    
+    case '#show-cash-tests':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('cash-register').style.display = 'flex';
+        document.getElementById('cash-tests').style.display = 'block';
+        document.getElementById('show-cash-tests').innerText = '▴ Close provided test cases';
+        cashTests = true;
+        break;
+
+    case '#show-cash-code':
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('cash-register').style.display = 'flex';
+        document.getElementById('cash-code').style.display = 'block';
+        document.getElementById('show-cash-code').innerText = '▴ Close code solution';
+        cashCode = true;
+        break;
+
+}
