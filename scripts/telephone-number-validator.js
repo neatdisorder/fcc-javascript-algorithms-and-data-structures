@@ -1,6 +1,24 @@
 document.getElementById('telephone-button').addEventListener('click', () => telephoneCheck(document.getElementById('telephone-input').value));
 
 function telephoneCheck(str) {
+  let regExp = /^1?\s?[\(]+\d{3}[\)]+[-\s]?\d{3}[-\s]?\d{4}$|^1?\s?\d{3}[-\s]?\d{3}[-\s]?\d{4}$/g;
+  
+  if (regExp.test(str)) {
+    document.getElementById('telephone-result').innerText = `🟢 ${document.getElementById('telephone-input').value} is a valid phone number.`;
+    document.getElementById('telephone-result').style.visibility = 'visible';
+    return true;
+  } else {
+    document.getElementById('telephone-result').innerText = `🔴 ${document.getElementById('telephone-input').value} is not a valid phone number.`;
+    document.getElementById('telephone-result').style.visibility = 'visible';
+    return false;
+  }
+
+}
+
+
+
+/*
+function telephoneCheck(str) {
     let inputArray = str.split('');
     let cleanNumbers = inputArray.filter(value => value.match(/[0-9]/g));
     // REGEXP
@@ -58,4 +76,4 @@ function telephoneCheck(str) {
       return false;
       }
     }
-  
+*/
