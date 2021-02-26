@@ -1,4 +1,4 @@
-### Portfolio
+### freeCodeCamp Javascript Algorithms and Data Structures Certification
 
 This is a single-page application I created for showcasing the solutions for the five final projects developed in vanilla Javascript for the **freeCodeCamp Javascript Algorithms and Data Structures Certification** of the [freeCodeCamp curriculum](https://www.freecodecamp.org/learn).
 
